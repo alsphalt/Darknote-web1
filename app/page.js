@@ -1,4 +1,5 @@
 import Board from '@/components/Board';
+import { SocketProvider } from '@/contexts/SocketContext';
 
 export default function Home() {
   return (
@@ -19,7 +20,9 @@ export default function Home() {
       }}>
         🎲 Ludo
       </h1>
-      <Board />
+      <SocketProvider roomId="preview-room" userId="preview-player">
+        <Board roomId="preview-room" />
+      </SocketProvider>
     </main>
   );
 }
